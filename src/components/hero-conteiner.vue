@@ -18,7 +18,11 @@
     <div class="hero-sidebar">
       <card_slide_about/>
       <card_slide/>
+      <sidebar_two/>
     </div>
+  </div>
+  <div class="follow">
+
   </div>
 </template>
 
@@ -28,6 +32,7 @@ import cards from "../components/card.vue";
 import big_cards from "../components/big-card.vue";
 import card_slide_about from "./card-slide-about.vue";
 import card_slide from "./card-slider.vue";
+import sidebar_two from "./sidebar-two.vue";
 </script>
 
 <style lang="scss">
