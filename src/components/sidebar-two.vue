@@ -2,10 +2,14 @@
   <div class="sidebar">
     <div class="section">
       <span class="title">Categories</span>
-      <v-list density="compact">
-        <v-list-item v-for="(category, index) in categories" :key="index">
-          <v-list-item-title>{{ category.name }}</v-list-item-title>
-          <v-list-item-subtitle>({{ category.count }})</v-list-item-subtitle>
+      <v-list>
+        <v-list-item
+            class="custom-list"
+            v-for="(category, index) in categories"
+            :key="index"
+            >
+            <v-list-item-title>{{ category.name }}</v-list-item-title>
+            <v-list-item-subtitle class="custom-item">({{ category.count }})</v-list-item-subtitle>
         </v-list-item>
       </v-list>
     </div>
@@ -13,31 +17,20 @@
     <div class="section">
       <span class="title">Social media</span>
       <div class="social-grid">
-        <v-btn
-            v-for="(social, index) in socialMedia"
-            :key="index"
-            icon variant="text"
-        >
-          <v-icon
-              :icon="social.icon"
-          >
-          </v-icon>
+        <div v-for="(social, index) in socialMedia" :key="index" class="social-item">
+          <v-icon>{{ social.icon }}</v-icon>
           <div class="social-info">
             <span class="count">{{ social.count }}</span>
             <span class="label">{{ social.label }}</span>
           </div>
-        </v-btn>
+        </div>
       </div>
     </div>
 
     <div class="section">
       <span class="title">Tags</span>
       <div class="tags">
-        <v-chip
-            v-for="(tag, index) in tags"
-            :key="index"
-            class="tag">{{ tag }}
-        </v-chip>
+        <v-chip v-for="(tag, index) in tags" :key="index" class="tag">{{ tag }}</v-chip>
       </div>
     </div>
   </div>
@@ -56,7 +49,7 @@ const socialMedia = [
   { icon: 'mdi-facebook', count: '32k', label: 'likes' },
   { icon: 'mdi-pinterest', count: '814', label: 'followers' },
   { icon: 'mdi-vimeo', count: '165', label: 'followers' },
-  { icon: 'mdi-dribbble', count: '6k', label: 'followers' },
+  { icon: 'mdi-dribble', count: '6k', label: 'followers' },
   { icon: 'mdi-twitter', count: '130k', label: 'followers' },
   { icon: 'mdi-behance', count: '37k', label: 'followers' },
   { icon: 'mdi-instagram', count: '85.4k', label: 'followers' },
@@ -73,9 +66,9 @@ const tags = ['Business', 'Freelance', 'Money', 'Experience', 'Lifestyle', 'SEO'
   margin-top: 60px;
   margin-left: 60px;
 
+
   .section {
-    height: 340px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     .title {
       display: flex;
@@ -85,29 +78,53 @@ const tags = ['Business', 'Freelance', 'Money', 'Experience', 'Lifestyle', 'SEO'
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       font-size: 16px;
       font-weight: 400;
+      margin-bottom: 10px;
     }
+.custom-list{
+  border-bottom: #9f9e9e solid 1px;
 
+  .custom-item{
+    float: right;
+    margin-top: -20px;
+    font-family: PT Serif, serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.55px;
+    letter-spacing: 0px;
+
+
+  }
+}
   }
 
   .social-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 15px;
     text-align: center;
 
-    .social-info {
+
+    .social-item {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
-      .count {
-        font-size: 14px;
-        font-weight: bold;
-      }
+      .social-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
 
-      .label {
-        font-size: 12px;
-        color: gray;
+        .count {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .label {
+          font-size: 12px;
+          color: gray;
+        }
       }
     }
   }
@@ -115,12 +132,12 @@ const tags = ['Business', 'Freelance', 'Money', 'Experience', 'Lifestyle', 'SEO'
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
 
     .tag {
       background: #f5f5f5;
-      padding: 5px 10px;
-      border-radius: 3px;
+      padding: 6px 12px;
+      border-radius: 16px;
       font-size: 12px;
     }
   }
