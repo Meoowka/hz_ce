@@ -1,14 +1,16 @@
 <template>
   <div class="hero-conteiner">
     <div class="hero-post">
-
       <cards/>
       <big_cards class="big_cards"/>
       <cards/>
 
+      <div class="hero-slide">
+
+      </div>
+
+
     </div>
-
-
 
 
     <div class="hero-sidebar">

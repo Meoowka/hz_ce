@@ -1,6 +1,13 @@
 <template>
-  <div v-for="(cards, index) in visibleCards" :key="index" class="product-card">
-    <img :src="cards.image" :alt="cards.name" class="card-image" />
+  <div
+      v-for="(cards, index) in visibleCards"
+      :key="index"
+      class="product-card">
+    <img
+        :src="cards.image"
+        :alt="cards.name"
+        class="card-image" />
+
     <div class="card-content">
       <div class="category">Fashion</div>
       <div class="title">One of Saturn’s largest rings may be newer than anyone</div>
@@ -20,22 +27,26 @@ export default {
         {name: "3", image: "src/assets/img/3_post.png"},
         {name: "4", image: "src/assets/img/4_post.png"},
         {name: "5", image: "src/assets/img/5_post.png"},
-        {name: "6", image: "src/assets/img/6_post.png"}
-
-      ]
+        {name: "6", image: "src/assets/img/6_post.png"},
+        {name: "7", image: "src/assets/img/7_post.png"},
+        {name: "8", image: "src/assets/img/8_post.png"},
+        {name: "9", image: "src/assets/img/9_post.png"},
+        {name: "10", image: "src/assets/img/10_post.png"}
+      ],
+      maxItems: 6
     }
   },
 
   computed: {
     visibleCards() {
+      if (renderCount > 1) {
+        return this.card.slice(6, 10); // Показываем с 7 по 10 карточки
+      }
       return this.card.slice(0, this.maxItems);
     }
   },
   created() {
     renderCount++;
-    if(renderCount > 1){
-      this.maxItems = 4;
-    }
   }
 }
 </script>
