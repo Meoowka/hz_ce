@@ -17,8 +17,12 @@
     <div class="section">
       <span class="title">Social media</span>
       <div class="social-grid">
-        <div v-for="(social, index) in socialMedia" :key="index" class="social-item">
-          <v-icon>{{ social.icon }}</v-icon>
+        <div
+            v-for="(social, index) in socialMedia"
+            :key="index"
+            class="social-item"
+        >
+          <v-icon class="icon">{{ social.icon }}</v-icon>
           <div class="social-info">
             <span class="count">{{ social.count }}</span>
             <span class="label">{{ social.label }}</span>
@@ -30,7 +34,13 @@
     <div class="section">
       <span class="title">Tags</span>
       <div class="tags">
-        <v-chip v-for="(tag, index) in tags" :key="index" class="tag">{{ tag }}</v-chip>
+        <v-chip
+            v-for="(tag, index) in tags"
+            :key="index"
+            class="tag"
+        >
+          {{ tag }}
+        </v-chip>
       </div>
     </div>
   </div>
@@ -49,9 +59,9 @@ const socialMedia = [
   { icon: 'mdi-facebook', count: '32k', label: 'likes' },
   { icon: 'mdi-pinterest', count: '814', label: 'followers' },
   { icon: 'mdi-vimeo', count: '165', label: 'followers' },
-  { icon: 'mdi-dribble', count: '6k', label: 'followers' },
+  { icon: 'mdi-pinterest', count: '6k', label: 'followers' },
   { icon: 'mdi-twitter', count: '130k', label: 'followers' },
-  { icon: 'mdi-behance', count: '37k', label: 'followers' },
+  { icon: 'mdi-twitter', count: '37k', label: 'followers' },
   { icon: 'mdi-instagram', count: '85.4k', label: 'followers' },
   { icon: 'mdi-youtube', count: '52k', label: 'subscribers' },
   { icon: 'mdi-google-plus', count: '642', label: 'followers' }
@@ -109,6 +119,7 @@ const tags = ['Business', 'Freelance', 'Money', 'Experience', 'Lifestyle', 'SEO'
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
       .social-info {
         display: flex;
@@ -125,6 +136,9 @@ const tags = ['Business', 'Freelance', 'Money', 'Experience', 'Lifestyle', 'SEO'
           font-size: 12px;
           color: gray;
         }
+        .icon{
+          width: 20px;
+        }
       }
     }
   }
@@ -132,13 +146,16 @@ const tags = ['Business', 'Freelance', 'Money', 'Experience', 'Lifestyle', 'SEO'
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    justify-content: space-between;
+
+    gap: 5px;
+    width: 100%;
 
     .tag {
       background: #f5f5f5;
-      padding: 6px 12px;
-      border-radius: 16px;
-      font-size: 12px;
+      justify-content: center;
+      padding: 5px 10px;
+      font-size: 14px;
     }
   }
 }
