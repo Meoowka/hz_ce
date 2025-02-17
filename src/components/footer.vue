@@ -111,8 +111,6 @@ footer {
 }
     .menu {
       width: 100%;
-
-
       ul {
           display: flex;
           margin: 0 40px;
@@ -122,13 +120,16 @@ footer {
           display: inline-block;
           margin-top: 8px;
           a{
-
             font-family: PT Sans,sans-serif;
             font-size: 14px;
             line-height: 18.12px;
             letter-spacing: 0;
             color: #666666;
             text-decoration: none;
+
+            &:hover{
+              color: rgba(201, 169, 110, 1);
+            }
           }
         }
       }
