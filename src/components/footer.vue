@@ -110,21 +110,23 @@ footer {
 
 }
     .menu {
-      margin-left: 100px;
-      font-family: PT Sans,sans-serif;
-      font-size: 14px;
-      line-height: 18.12px;
-      letter-spacing: 0;
+      width: 100%;
 
-      width: 368px;
 
       ul {
-        display: flex;
-        justify-content: space-between;
+          display: flex;
+          margin: 0 40px;
+          justify-content: space-between;
         li {
+
           display: inline-block;
           margin-top: 8px;
           a{
+
+            font-family: PT Sans,sans-serif;
+            font-size: 14px;
+            line-height: 18.12px;
+            letter-spacing: 0;
             color: #666666;
             text-decoration: none;
           }
